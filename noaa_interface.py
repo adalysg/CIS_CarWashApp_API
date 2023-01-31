@@ -1,2 +1,3 @@
 class NoaaInterface():
-    pass
+    def getweather():
+        pass
