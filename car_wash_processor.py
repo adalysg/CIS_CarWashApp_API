@@ -10,7 +10,7 @@ class CarWashDecisionProcessor:
     def do_wash(self, weather_data):
         # Will return TRUE if it's a good day to wash car (values <10)
         # Will return FALSE if it's not a good day to wash car (values >=10)
-        if weather_data['snow'] < 10 and weather_data['rain'] < 10:
+        if weather_data['snow'] >= 7 and weather_data['rain'] >= 7:
             return True
         return False
 
