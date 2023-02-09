@@ -152,7 +152,7 @@
                 "windDirection": "NE",
                 "icon": "https://api.weather.gov/icons/land/day/rain_showers,40?size=medium",
                 "shortForecast": "Chance Rain Showers",
-                "detailedForecast": "A chance of rain showers. Mostly cloudy, with a high near 74. Northeast wind around 10 mph. Chance of precipitation is 40%."
+                "detailedForecast": "A chance of snow showers. Mostly cloudy, with a high near 74. Northeast wind around 10 mph. Chance of precipitation is 40%."
             },
             {
                 "number": 8,

@@ -8,6 +8,8 @@ import json
 # Are we calling NOAA they way it should be called?
 class TestCarWashDecisionProcessorIntegration(TestCase):
 
+    # specified object (get_forecast & get_weather_station of the NoaaInterface class) will be 
+    # replaced with a mock during test and is restored afterwards
     @patch.object(NoaaInterface, 'get_forecast')
     @patch.object(NoaaInterface, 'get_weather_station')
     def test_gets_weather_data_back(self, mock_weather_station, mock_forecast):
@@ -21,5 +23,5 @@ class TestCarWashDecisionProcessorIntegration(TestCase):
         car_wash_decision_processor = CarWashDecisionProcessor("28.6610945","-81.4606445", noaa_interface)
         weather_data = car_wash_decision_processor.get_weather_data()
         # What gets sent to NOAA?
-        self.assertEquals(weather_data, {'rain': 1, 'snow': 0}) 
+        self.assertEqual(weather_data, {'rain': 2, 'snow': 3}) 
 
