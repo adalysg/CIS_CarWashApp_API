@@ -22,6 +22,6 @@ class TestCarWashDecisionProcessorIntegration(TestCase):
         noaa_interface = NoaaInterface()
         car_wash_decision_processor = CarWashDecisionProcessor("28.6610945","-81.4606445", noaa_interface)
         weather_data = car_wash_decision_processor.get_weather_data()
-        # What gets sent to NOAA?
-        self.assertEqual(weather_data, {'rain': 2, 'snow': 3}) 
+        # "rain" keyword in "number": 3 (3//2=1) and "snow" keyword in "number": 7 (7//2=3)
+        self.assertEqual(weather_data, {'rain': 1, 'snow': 3}) 
 
