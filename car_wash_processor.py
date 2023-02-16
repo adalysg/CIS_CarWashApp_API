@@ -8,10 +8,12 @@ class CarWashDecisionProcessor:
         return self.noaa_interface.get_weather(self.lat, self.long)
 
     def do_wash(self):
-        # Will return TRUE if it's a good day to wash car (values <10)
-        # Will return FALSE if it's not a good day to wash car (values >=10)
+        # Will return TRUE if it's a good day to wash car (more than 7 days before rain/snow)
+        # Will return FALSE if it's not a good day to wash car 
         weather_data = self.get_weather_data()
-        if weather_data['snow'] >= 7 and weather_data['rain'] >= 7:
+        if sum(weather_data.values()) == 0:
+            return True
+        
+        if all(x >= 7 for x in weather_data.values()):
             return True
         return False
-        

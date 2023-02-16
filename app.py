@@ -12,7 +12,7 @@ class Decider(Resource):
         noaa_interface = NoaaInterface()
         lat = request.args["lat"]
         long = request.args["long"]
-        print(lat, long)
+        # print(lat, long)
         car_processor = CarWashDecisionProcessor(lat, long, noaa_interface)
         return car_processor.do_wash()
 

@@ -18,8 +18,9 @@ class NoaaInterface():
     # FUNCTION: Returns grid endpoint (url) for zone
     def get_weather_station(self, lat, long, token):
         res = self.client.get(f"https://api.weather.gov/points/{lat},{long}", headers={"token": token})
-        print(res.json())
+        # print(res.json())
         forecast_url = res.json()["properties"]["forecast"]
+        # print(forecast_url)
         return forecast_url
 
     # FUNCTION: Using the endpoint and token (permission), can generate json file with forecast 
